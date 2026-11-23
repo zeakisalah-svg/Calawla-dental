@@ -762,4 +762,5 @@ def get_dashboard_stats():
 # START DATABASE
 # =========================================================
 
-init_db()
+if not os.environ.get('VERCEL'):
+    init_db()
