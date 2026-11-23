@@ -1,0 +1,1513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#7138a8">
+    <meta name="color-scheme" content="light">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Calawla Dental Clinic | Modern Dental Care</title>
+
+    <meta
+        name="description"
+        content="Calawla Dental Clinical provides modern, professional and compassionate dental care for you and your family."
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         NAVIGATION
+    ====================================================== -->
+
+    <header class="navbar">
+
+        <div class="container nav-content">
+
+            <a href="/" class="logo">
+
+                <span class="logo-icon">
+                    ✚
+                </span>
+
+                <span>
+                    Calawla <strong>Dental</strong>
+                </span>
+
+            </a>
+
+
+            <nav class="nav-links">
+
+                <a href="/" class="active">
+                    Home
+                </a>
+
+                <a href="/services">
+                    Services
+                </a>
+
+                <a href="/about">
+                    About Us
+                </a>
+
+                <a href="/doctors">
+                    Our Doctors
+                </a>
+
+                <a href="/contact">
+                    Contact
+                </a>
+
+            </nav>
+
+
+            <a
+                href="/appointment"
+                class="nav-btn"
+            >
+                Book Appointment
+            </a>
+
+
+            <!-- Mobile Menu -->
+
+            <button
+                class="mobile-menu-btn"
+                type="button"
+                aria-label="Open navigation"
+                aria-controls="mobileNav"
+                aria-expanded="false"
+                onclick="toggleMenu()"
+            >
+                ☰
+            </button>
+
+        </div>
+
+
+        <!-- MOBILE NAVIGATION -->
+
+        <div
+            class="mobile-nav"
+            id="mobileNav"
+        >
+
+            <a href="/">
+                Home
+            </a>
+
+            <a href="/services">
+                Services
+            </a>
+
+            <a href="/about">
+                About Us
+            </a>
+
+            <a href="/doctors">
+                Our Doctors
+            </a>
+
+            <a href="/contact">
+                Contact
+            </a>
+
+            <a
+                href="/appointment"
+                class="mobile-book-btn"
+            >
+                Book Appointment
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <main>
+
+        <section
+            class="hero"
+            id="home"
+        >
+
+            <div class="hero-glow hero-glow-one"></div>
+            <div class="hero-glow hero-glow-two"></div>
+
+
+            <div class="container hero-content">
+
+
+                <!-- LEFT -->
+
+                <div class="hero-text">
+
+                    <div class="hero-badge">
+
+                        <span>●</span>
+
+                        Professional Dental Care
+
+                    </div>
+
+
+                    <h1>
+
+                        Your Smile.
+
+                        <br>
+
+                        <span>
+                            Our Passion.
+                        </span>
+
+                    </h1>
+
+
+                    <p>
+
+                        At Calawla Dental Clinical, we combine
+                        modern dental technology with compassionate
+                        care to give you and your family a healthier,
+                        brighter and more confident smile.
+
+                    </p>
+
+
+                    <div class="hero-buttons">
+
+                        <a
+                            href="/appointment"
+                            class="primary-btn"
+                        >
+
+                            Book An Appointment
+
+                            <span>
+                                →
+                            </span>
+
+                        </a>
+
+
+                        <a
+                            href="/services"
+                            class="secondary-btn"
+                        >
+
+                            Explore Our Services
+
+                        </a>
+
+                    </div>
+
+
+                    <!-- STATS -->
+
+                    <div class="hero-stats">
+
+
+                        <div class="stat">
+
+                            <strong>
+                                Care
+                            </strong>
+
+                            <span>
+                                Years Experience
+                            </span>
+
+                        </div>
+
+
+                        <div class="stat">
+
+                            <strong>
+                                Trust
+                            </strong>
+
+                            <span>
+                                Happy Patients
+                            </span>
+
+                        </div>
+
+
+                        <div class="stat">
+
+                            <strong>
+                                Smile
+                            </strong>
+
+                            <span>
+                                Dental Services
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- RIGHT -->
+
+                <div class="hero-visual">
+
+
+                    <div class="hero-image-background">
+
+                        <div class="hero-circle-ring"></div>
+
+                    </div>
+
+
+                    <div class="hero-image-wrapper">
+
+                        <img
+                            src="{{ url_for('static', filename='images/Screenshot 2026-10-24 152153.png') }}"
+                            alt="Dental professional at Calawla Dental Clinic"
+                            class="doctor-photo"
+                            fetchpriority="high"
+                            decoding="async"
+                        >
+
+                    </div>
+
+
+                    <!-- FLOATING CARD -->
+
+                    <div class="doctor-card">
+
+                        <div class="doctor-check">
+                            ✓
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Trusted Dental Care
+                            </strong>
+
+                            <span>
+                                Professional & Compassionate
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- EXPERIENCE BADGE -->
+
+                    <div class="experience-card">
+
+                        <strong>
+                            Care
+                        </strong>
+
+                        <span>
+                            Years of
+                            <br>
+                            Experience
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             TRUST BAR
+        ====================================================== -->
+
+        <section class="trust-bar">
+
+            <div class="container trust-content">
+
+                <div>
+                    <span>✓</span>
+                    Experienced Dental Team
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    Modern Treatment
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    Patient First
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    Comfortable Care
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             SERVICES
+        ====================================================== -->
+
+        <section
+            class="services"
+            id="services"
+        >
+
+            <div class="container">
+
+
+                <div class="section-heading">
+
+                    <div class="section-label">
+                        OUR SERVICES
+                    </div>
+
+
+                    <h2>
+
+                        Complete Dental Care
+
+                        <span>
+                            Under One Roof
+                        </span>
+
+                    </h2>
+
+
+                    <p>
+
+                        From routine checkups to advanced dental
+                        treatments, our experienced team is here
+                        to take care of your smile.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="service-grid">
+
+
+                    <!-- CARD 1 -->
+
+                    <article class="service-card">
+
+                        <div class="service-icon red-icon">
+                            ✚
+                        </div>
+
+                        <h3>
+                            General Dentistry
+                        </h3>
+
+                        <p>
+
+                            Complete dental examinations,
+                            cleaning, fillings and preventive
+                            oral healthcare.
+
+                        </p>
+
+                        <a href="/appointment">
+                            Book Service →
+                        </a>
+
+                    </article>
+
+
+
+                    <!-- CARD 2 -->
+
+                    <article class="service-card">
+
+                        <div class="service-icon purple-icon">
+                            ✦
+                        </div>
+
+                        <h3>
+                            Teeth Whitening
+                        </h3>
+
+                        <p>
+
+                            Professional whitening treatments
+                            designed to give you a brighter
+                            and more confident smile.
+
+                        </p>
+
+                        <a href="/appointment">
+                            Book Service →
+                        </a>
+
+                    </article>
+
+
+
+                    <!-- CARD 3 -->
+
+                    <article class="service-card">
+
+                        <div class="service-icon red-icon">
+                            ◇
+                        </div>
+
+                        <h3>
+                            Cosmetic Dentistry
+                        </h3>
+
+                        <p>
+
+                            Improve the appearance of your smile
+                            with modern cosmetic dental treatments.
+
+                        </p>
+
+                        <a href="/appointment">
+                            Book Service →
+                        </a>
+
+                    </article>
+
+
+
+                    <!-- CARD 4 -->
+
+                    <article class="service-card">
+
+                        <div class="service-icon purple-icon">
+                            ♡
+                        </div>
+
+                        <h3>
+                            Pediatric Dentistry
+                        </h3>
+
+                        <p>
+
+                            Gentle and friendly dental care
+                            designed especially for children.
+
+                        </p>
+
+                        <a href="/appointment">
+                            Book Service →
+                        </a>
+
+                    </article>
+
+
+
+                    <!-- CARD 5 -->
+
+                    <article class="service-card">
+
+                        <div class="service-icon red-icon">
+                            🦷
+                        </div>
+
+                        <h3>
+                            Dental Implants
+                        </h3>
+
+                        <p>
+
+                            Modern implant solutions designed
+                            to restore function and confidence.
+
+                        </p>
+
+                        <a href="/appointment">
+                            Book Service →
+                        </a>
+
+                    </article>
+
+
+
+                    <!-- CARD 6 -->
+
+                    <article class="service-card">
+
+                        <div class="service-icon purple-icon">
+                            ✨
+                        </div>
+
+                        <h3>
+                            Dental Cleaning
+                        </h3>
+
+                        <p>
+
+                            Professional cleaning to maintain
+                            healthy teeth and gums.
+
+                        </p>
+
+                        <a href="/appointment">
+                            Book Service →
+                        </a>
+
+                    </article>
+
+
+
+                    <!-- CARD 7 -->
+
+                    <article class="service-card">
+
+                        <div class="service-icon red-icon">
+                            +
+                        </div>
+
+                        <h3>
+                            Root Canal
+                        </h3>
+
+                        <p>
+
+                            Professional treatment focused on
+                            protecting damaged or infected teeth.
+
+                        </p>
+
+                        <a href="/appointment">
+                            Book Service →
+                        </a>
+
+                    </article>
+
+
+
+                    <!-- CARD 8 -->
+
+                    <article class="service-card">
+
+                        <div class="service-icon purple-icon">
+                            ≋
+                        </div>
+
+                        <h3>
+                            Orthodontics
+                        </h3>
+
+                        <p>
+
+                            Modern solutions to help improve
+                            tooth alignment and your smile.
+
+                        </p>
+
+                        <a href="/appointment">
+                            Book Service →
+                        </a>
+
+                    </article>
+
+
+                </div>
+
+
+
+                <div class="services-button">
+
+                    <a
+                        href="/services"
+                        class="outline-btn"
+                    >
+                        View All Dental Services →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             WHY CHOOSE US
+        ====================================================== -->
+
+        <section
+            class="why-us"
+            id="why-us"
+        >
+
+            <div class="container">
+
+
+                <div class="section-heading">
+
+                    <div class="section-label">
+                        WHY CALAWLA
+                    </div>
+
+                    <h2>
+
+                        Dental Care You Can
+
+                        <span>
+                            Trust Completely
+                        </span>
+
+                    </h2>
+
+                    <p>
+
+                        Your comfort and confidence matter to us.
+                        We focus on quality care, modern dentistry
+                        and a welcoming experience.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="why-grid">
+
+
+                    <article class="why-card">
+
+                        <div class="why-icon">
+                            🦷
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Experienced Care
+                            </h3>
+
+                            <p>
+
+                                Our dental team is committed to
+                                providing professional and
+                                comfortable treatment.
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="why-card">
+
+                        <div class="why-icon purple">
+                            ✨
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Modern Dentistry
+                            </h3>
+
+                            <p>
+
+                                We use modern dental techniques
+                                to improve your treatment experience.
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="why-card">
+
+                        <div class="why-icon">
+                            ❤️
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Patient First
+                            </h3>
+
+                            <p>
+
+                                Your comfort, safety and satisfaction
+                                are at the heart of our care.
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="why-card">
+
+                        <div class="why-icon purple">
+                            🕐
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Flexible Appointments
+                            </h3>
+
+                            <p>
+
+                                Book your visit at a convenient time
+                                and avoid unnecessary waiting.
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="why-card">
+
+                        <div class="why-icon">
+                            🛡️
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Safe & Comfortable
+                            </h3>
+
+                            <p>
+
+                                We focus on maintaining a clean,
+                                welcoming and comfortable environment.
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="why-card">
+
+                        <div class="why-icon purple">
+                            🌟
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Personalized Treatment
+                            </h3>
+
+                            <p>
+
+                                Every patient is different, so we
+                                take time to understand your needs.
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             ABOUT
+        ====================================================== -->
+
+        <section
+            class="about"
+            id="about"
+        >
+
+            <div class="container about-content">
+
+
+                <!-- VISUAL -->
+
+                <div class="about-visual">
+
+                    <div class="about-decoration"></div>
+
+                    <div class="about-box">
+
+                        <div class="about-cross">
+                            ✚
+                        </div>
+
+                        <h3>
+                            Quality Dental Care
+                        </h3>
+
+                        <p>
+
+                            Professional treatment
+                            with a personal touch.
+
+                        </p>
+
+
+                        <div class="about-mini-stats">
+
+                            <div>
+                                <strong>
+                                    Care
+                                </strong>
+
+                                <span>
+                                    Years
+                                </span>
+                            </div>
+
+
+                            <div>
+                                <strong>
+                                    Trust
+                                </strong>
+
+                                <span>
+                                    Patients
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- TEXT -->
+
+                <div class="about-text">
+
+                    <div class="section-label">
+                        ABOUT CALAWLA
+                    </div>
+
+
+                    <h2>
+
+                        We Care About
+
+                        <span>
+                            Your Smile
+                        </span>
+
+                    </h2>
+
+
+                    <p>
+
+                        Calawla Dental Clinical is dedicated to
+                        providing professional dental care in a
+                        welcoming and comfortable environment.
+
+                    </p>
+
+
+                    <p>
+
+                        From preventive care to cosmetic and
+                        restorative treatments, our goal is to
+                        help every patient achieve a healthy,
+                        confident smile.
+
+                    </p>
+
+
+
+                    <div class="about-features">
+
+                        <div>
+                            <span>✓</span>
+                            Professional Dental Team
+                        </div>
+
+                        <div>
+                            <span>✓</span>
+                            Modern Treatment Approach
+                        </div>
+
+                        <div>
+                            <span>✓</span>
+                            Patient-Centered Care
+                        </div>
+
+                        <div>
+                            <span>✓</span>
+                            Comfortable Environment
+                        </div>
+
+                    </div>
+
+
+                    <a
+                        href="/about"
+                        class="primary-btn"
+                    >
+                        Learn More About Us
+                        <span>→</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             TESTIMONIALS
+        ====================================================== -->
+
+        <section
+            class="testimonials"
+            id="reviews"
+        >
+
+            <div class="container">
+
+
+                <div class="section-heading">
+
+                    <div class="section-label">
+                        PATIENT REVIEWS
+                    </div>
+
+                    <h2>
+
+                        What Our Patients
+
+                        <span>
+                            Say About Us
+                        </span>
+
+                    </h2>
+
+                    <p>
+
+                        Real care creates real confidence.
+                        Here is what patients can experience
+                        when visiting Calawla Dental.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="testimonial-grid">
+
+
+                    <article class="testimonial-card">
+
+                        <div class="stars">
+                            ★★★★★
+                        </div>
+
+                        <p>
+
+                            “The team made my dental visit
+                            comfortable and easy. The environment
+                            was welcoming and professional.”
+
+                        </p>
+
+                        <div class="patient">
+
+                            <div class="patient-avatar">
+                                A
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Amina
+                                </strong>
+
+                                <span>
+                                    Dental Patient
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="testimonial-card featured">
+
+                        <div class="stars">
+                            ★★★★★
+                        </div>
+
+                        <p>
+
+                            “I really appreciated the professional
+                            service and attention to detail. I felt
+                            comfortable throughout my treatment.”
+
+                        </p>
+
+                        <div class="patient">
+
+                            <div class="patient-avatar">
+                                M
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Mohamed
+                                </strong>
+
+                                <span>
+                                    Dental Patient
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="testimonial-card">
+
+                        <div class="stars">
+                            ★★★★★
+                        </div>
+
+                        <p>
+
+                            “A friendly dental clinic with a team
+                            that genuinely cares about patients
+                            and their smiles.”
+
+                        </p>
+
+                        <div class="patient">
+
+                            <div class="patient-avatar">
+                                S
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Sahra
+                                </strong>
+
+                                <span>
+                                    Dental Patient
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             EMERGENCY CTA
+        ====================================================== -->
+
+        <section class="emergency-section">
+
+            <div class="container">
+
+                <div class="emergency-box">
+
+
+                    <div class="emergency-icon">
+                        🚨
+                    </div>
+
+
+                    <div class="emergency-content">
+
+                        <span>
+                            NEED DENTAL CARE?
+                        </span>
+
+                        <h2>
+                            Don't Ignore Your Dental Pain.
+                        </h2>
+
+                        <p>
+
+                            Contact Calawla Dental and let our
+                            team help you find the right care.
+
+                        </p>
+
+                    </div>
+
+
+                    <a
+                        href="/appointment"
+                        class="white-btn"
+                    >
+                        Get Dental Care →
+                    </a>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             APPOINTMENT CTA
+        ====================================================== -->
+
+        <section
+            class="appointment"
+            id="appointment"
+        >
+
+            <div class="container">
+
+                <div class="appointment-box">
+
+
+                    <div>
+
+                        <div class="section-label light">
+                            READY FOR A HEALTHIER SMILE?
+                        </div>
+
+
+                        <h2>
+                            Book Your Appointment Today
+                        </h2>
+
+
+                        <p>
+
+                            Take the first step toward a healthier,
+                            brighter and more confident smile.
+
+                        </p>
+
+                    </div>
+
+
+                    <a
+                        href="/appointment"
+                        class="white-btn"
+                    >
+                        Book Appointment →
+                    </a>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <div class="container footer-content">
+
+
+            <!-- BRAND -->
+
+            <div class="footer-brand">
+
+                <a
+                    href="/"
+                    class="logo footer-logo"
+                >
+
+                    <span class="logo-icon">
+                        ✚
+                    </span>
+
+                    <span>
+                        Calawla <strong>Dental</strong>
+                    </span>
+
+                </a>
+
+
+                <p>
+
+                    Professional dental care focused on
+                    healthy smiles, modern treatment and
+                    compassionate patient service.
+
+                </p>
+
+
+                <div class="footer-socials">
+
+                    <a href="{{ url_for('contact') }}" aria-label="Contact the clinic about Facebook details">
+                        f
+                    </a>
+
+                    <a href="{{ url_for('contact') }}" aria-label="Contact the clinic about Instagram details">
+                        ◎
+                    </a>
+
+                    <a href="{{ url_for('contact') }}" aria-label="Contact the clinic">
+                        ◉
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- QUICK LINKS -->
+
+            <div class="footer-column">
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <a href="/">
+                    Home
+                </a>
+
+                <a href="/about">
+                    About Us
+                </a>
+
+                <a href="/services">
+                    Services
+                </a>
+
+                <a href="/doctors">
+                    Our Doctors
+                </a>
+
+                <a href="/contact">
+                    Contact
+                </a>
+
+            </div>
+
+
+
+            <!-- SERVICES -->
+
+            <div class="footer-column">
+
+                <h3>
+                    Our Services
+                </h3>
+
+                <a href="/services">
+                    General Dentistry
+                </a>
+
+                <a href="/services">
+                    Teeth Whitening
+                </a>
+
+                <a href="/services">
+                    Cosmetic Dentistry
+                </a>
+
+                <a href="/services">
+                    Dental Implants
+                </a>
+
+                <a href="/services">
+                    Pediatric Dentistry
+                </a>
+
+            </div>
+
+
+
+            <!-- CONTACT -->
+
+            <div class="footer-column">
+
+                <h3>
+                    Contact Us
+                </h3>
+
+                <p>
+                    📍 Calawla Dental Clinical
+                </p>
+
+                <p>
+                    📞 Please contact the clinic for phone details
+                </p>
+
+                <p>
+                    ✉️ Contact details to be confirmed
+                </p>
+
+                <p>
+                    🕐 Sat - Thu: 8:00 AM - 8:00 PM
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="footer-bottom">
+
+            <p>
+
+                © 2026 Calawla Dental Clinical.
+                All Rights Reserved.
+
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         WHATSAPP FLOATING BUTTON
+    ====================================================== -->
+
+    <a
+        href="{{ url_for('contact') }}"
+        class="whatsapp-btn"
+        aria-label="Contact Calawla Dental Clinic"
+        title="Contact Calawla Dental Clinic"
+    >
+        <span aria-hidden="true">✉</span>
+    </a>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+        function toggleMenu(forceClose = false) {
+            const menu = document.getElementById("mobileNav");
+            const button = document.querySelector(".mobile-menu-btn");
+
+            if (!menu || !button) return;
+
+            const shouldOpen = forceClose ? false : !menu.classList.contains("show");
+            menu.classList.toggle("show", shouldOpen);
+            button.setAttribute("aria-expanded", String(shouldOpen));
+            button.setAttribute(
+                "aria-label",
+                shouldOpen ? "Close navigation" : "Open navigation"
+            );
+            button.textContent = shouldOpen ? "×" : "☰";
+        }
+
+        document.querySelectorAll(".mobile-nav a").forEach((link) => {
+            link.addEventListener("click", () => toggleMenu(true));
+        });
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape") toggleMenu(true);
+        });
+
+        document.addEventListener("click", (event) => {
+            const menu = document.getElementById("mobileNav");
+            const button = document.querySelector(".mobile-menu-btn");
+
+            if (
+                menu &&
+                button &&
+                menu.classList.contains("show") &&
+                !menu.contains(event.target) &&
+                !button.contains(event.target)
+            ) {
+                toggleMenu(true);
+            }
+        });
+
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > 900) toggleMenu(true);
+        });
+    </script>
+
+
+</body>
+
+</html>

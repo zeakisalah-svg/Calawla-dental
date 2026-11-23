@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Explore the professional dental services offered by Calawla Dental Clinic."
+    >
+
+    <meta name="theme-color" content="#6f2dbd">
+
+    <title>Our Services | Calawla Dental Clinic</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+</head>
+
+<body>
+
+    <!-- ============================= -->
+    <!-- NAVIGATION -->
+    <!-- ============================= -->
+
+    <header class="navbar">
+
+        <div class="container nav-content">
+
+            <a href="/" class="logo">
+                <span class="logo-icon">✚</span>
+                <span>
+                    Calawla <strong>Dental</strong>
+                </span>
+            </a>
+
+            <nav class="nav-links">
+
+                <a href="/">
+                    Home
+                </a>
+
+                <a href="/services" class="active">
+                    Services
+                </a>
+
+                <a href="/about">
+                    About Us
+                </a>
+
+                <a href="/doctors">
+                    Our Doctors
+                </a>
+
+                <a href="/contact">
+                    Contact
+                </a>
+
+            </nav>
+
+            <a href="/appointment" class="nav-btn">
+                Book Appointment
+            </a>
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="mobileMenu"
+            >
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </div>
+
+        <!-- MOBILE MENU -->
+
+        <nav class="mobile-menu" id="mobileMenu">
+
+            <a href="/">
+                Home
+            </a>
+
+            <a href="/services">
+                Services
+            </a>
+
+            <a href="/about">
+                About Us
+            </a>
+
+            <a href="/doctors">
+                Our Doctors
+            </a>
+
+            <a href="/contact">
+                Contact
+            </a>
+
+            <a href="/appointment">
+                Book Appointment
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ============================= -->
+    <!-- PAGE HERO -->
+    <!-- ============================= -->
+
+    <section class="page-hero">
+
+        <div class="container">
+
+            <div class="page-hero-content">
+
+                <span class="section-tag">
+                    OUR DENTAL SERVICES
+                </span>
+
+                <h1>
+                    Complete Care For
+                    <span>Your Smile</span>
+                </h1>
+
+                <p>
+                    From routine checkups to advanced dental treatments,
+                    Calawla Dental Clinic is committed to helping you
+                    maintain a healthy, confident and beautiful smile.
+                </p>
+
+                <div class="breadcrumb">
+
+                    <a href="/">
+                        Home
+                    </a>
+
+                    <span>›</span>
+
+                    <span>
+                        Services
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ============================= -->
+    <!-- SERVICES INTRO -->
+    <!-- ============================= -->
+
+    <section class="services-intro section-padding">
+
+        <div class="container">
+
+            <div class="section-heading center">
+
+                <span class="section-tag">
+                    WHAT WE OFFER
+                </span>
+
+                <h2>
+                    Professional Dental Care
+                    <span>Under One Roof</span>
+                </h2>
+
+                <p>
+                    We provide a range of dental services designed
+                    around your comfort, oral health and individual needs.
+                </p>
+
+            </div>
+
+
+            <!-- ============================= -->
+            <!-- SERVICE GRID -->
+            <!-- ============================= -->
+
+            <div class="services-grid">
+
+
+                <!-- SERVICE 1 -->
+
+                <article class="service-card">
+
+                    <div class="service-icon">
+                        🦷
+                    </div>
+
+                    <div class="service-number">
+                        01
+                    </div>
+
+                    <h3>
+                        Dental Checkup
+                    </h3>
+
+                    <p>
+                        Regular dental examinations help identify
+                        oral health problems early and keep your
+                        teeth and gums healthy.
+                    </p>
+
+                    <a
+                        href="/appointment?service=Dental%20Checkup"
+                        class="service-link"
+                    >
+                        Book This Service
+                        <span>→</span>
+                    </a>
+
+                </article>
+
+
+                <!-- SERVICE 2 -->
+
+                <article class="service-card">
+
+                    <div class="service-icon">
+                        ✨
+                    </div>
+
+                    <div class="service-number">
+                        02
+                    </div>
+
+                    <h3>
+                        Teeth Cleaning
+                    </h3>
+
+                    <p>
+                        Professional cleaning helps remove plaque,
+                        tartar and stains while supporting healthier
+                        teeth and gums.
+                    </p>
+
+                    <a
+                        href="/appointment?service=Teeth%20Cleaning"
+                        class="service-link"
+                    >
+                        Book This Service
+                        <span>→</span>
+                    </a>
+
+                </article>
+
+
+                <!-- SERVICE 3 -->
+
+                <article class="service-card">
+
+                    <div class="service-icon">
+                        💎
+                    </div>
+
+                    <div class="service-number">
+                        03
+                    </div>
+
+                    <h3>
+                        Teeth Whitening
+                    </h3>
+
+                    <p>
+                        Improve the appearance of your smile with
+                        professional teeth whitening designed to
+                        brighten your teeth.
+                    </p>
+
+                    <a
+                        href="/appointment?service=Teeth%20Whitening"
+                        class="service-link"
+                    >
+                        Book This Service
+                        <span>→</span>
+                    </a>
+
+                </article>
+
+
+                <!-- SERVICE 4 -->
+
+                <article class="service-card">
+
+                    <div class="service-icon">
+                        🩺
+                    </div>
+
+                    <div class="service-number">
+                        04
+                    </div>
+
+                    <h3>
+                        Dental Filling
+                    </h3>
+
+                    <p>
+                        Dental fillings can restore teeth affected
+                        by cavities and help protect them from
+                        further damage.
+                    </p>
+
+                    <a
+                        href="/appointment?service=Dental%20Filling"
+                        class="service-link"
+                    >
+                        Book This Service
+                        <span>→</span>
+                    </a>
+
+                </article>
+
+
+                <!-- SERVICE 5 -->
+
+                <article class="service-card">
+
+                    <div class="service-icon">
+                        🦷
+                    </div>
+
+                    <div class="service-number">
+                        05
+                    </div>
+
+                    <h3>
+                        Root Canal Treatment
+                    </h3>
+
+                    <p>
+                        Root canal treatment can help treat infection
+                        inside a tooth while preserving the natural
+                        tooth whenever possible.
+                    </p>
+
+                    <a
+                        href="/appointment?service=Root%20Canal%20Treatment"
+                        class="service-link"
+                    >
+                        Book This Service
+                        <span>→</span>
+                    </a>
+
+                </article>
+
+
+                <!-- SERVICE 6 -->
+
+                <article class="service-card">
+
+                    <div class="service-icon">
+                        🛠️
+                    </div>
+
+                    <div class="service-number">
+                        06
+                    </div>
+
+                    <h3>
+                        Tooth Extraction
+                    </h3>
+
+                    <p>
+                        When a tooth cannot be safely preserved,
+                        professional extraction may be recommended
+                        following a dental evaluation.
+                    </p>
+
+                    <a
+                        href="/appointment?service=Tooth%20Extraction"
+                        class="service-link"
+                    >
+                        Book This Service
+                        <span>→</span>
+                    </a>
+
+                </article>
+
+
+                <!-- SERVICE 7 -->
+
+                <article class="service-card featured-service">
+
+                    <div class="featured-badge">
+                        POPULAR
+                    </div>
+
+                    <div class="service-icon">
+                        😁
+                    </div>
+
+                    <div class="service-number">
+                        07
+                    </div>
+
+                    <h3>
+                        Braces & Orthodontics
+                    </h3>
+
+                    <p>
+                        Orthodontic care helps improve tooth alignment
+                        and contributes to a healthier and more
+                        confident smile.
+                    </p>
+
+                    <a
+                        href="/appointment?service=Braces%20and%20Orthodontics"
+                        class="service-link"
+                    >
+                        Book This Service
+                        <span>→</span>
+                    </a>
+
+                </article>
+
+
+                <!-- SERVICE 8 -->
+
+                <article class="service-card">
+
+                    <div class="service-icon">
+                        👑
+                    </div>
+
+                    <div class="service-number">
+                        08
+                    </div>
+
+                    <h3>
+                        Dental Crowns
+                    </h3>
+
+                    <p>
+                        Crowns can help restore the shape, strength
+                        and appearance of damaged or weakened teeth.
+                    </p>
+
+                    <a
+                        href="/appointment?service=Dental%20Crowns"
+                        class="service-link"
+                    >
+                        Book This Service
+                        <span>→</span>
+                    </a>
+
+                </article>
+
+
+                <!-- SERVICE 9 -->
+
+                <article class="service-card">
+
+                    <div class="service-icon">
+                        🔩
+                    </div>
+
+                    <div class="service-number">
+                        09
+                    </div>
+
+                    <h3>
+                        Dental Implants
+                    </h3>
+
+                    <p>
+                        Dental implants may be an option for replacing
+                        missing teeth after a professional assessment
+                        of your oral health.
+                    </p>
+
+                    <a
+                        href="/appointment?service=Dental%20Implants"
+                        class="service-link"
+                    >
+                        Book This Service
+                        <span>→</span>
+                    </a>
+
+                </article>
+
+
+                <!-- SERVICE 10 -->
+
+                <article class="service-card">
+
+                    <div class="service-icon">
+                        👶
+                    </div>
+
+                    <div class="service-number">
+                        10
+                    </div>
+
+                    <h3>
+                        Children's Dentistry
+                    </h3>
+
+                    <p>
+                        Gentle dental care for children, helping
+                        families build healthy oral hygiene habits
+                        from an early age.
+                    </p>
+
+                    <a
+                        href="/appointment?service=Children%27s%20Dentistry"
+                        class="service-link"
+                    >
+                        Book This Service
+                        <span>→</span>
+                    </a>
+
+                </article>
+
+
+                <!-- SERVICE 11 -->
+
+                <article class="service-card">
+
+                    <div class="service-icon">
+                        🪥
+                    </div>
+
+                    <div class="service-number">
+                        11
+                    </div>
+
+                    <h3>
+                        Gum Care
+                    </h3>
+
+                    <p>
+                        Healthy gums are an important part of overall
+                        oral health. We provide assessment and care
+                        for common gum concerns.
+                    </p>
+
+                    <a
+                        href="/appointment?service=Gum%20Care"
+                        class="service-link"
+                    >
+                        Book This Service
+                        <span>→</span>
+                    </a>
+
+                </article>
+
+
+                <!-- SERVICE 12 -->
+
+                <article class="service-card">
+
+                    <div class="service-icon">
+                        🌟
+                    </div>
+
+                    <div class="service-number">
+                        12
+                    </div>
+
+                    <h3>
+                        Cosmetic Dentistry
+                    </h3>
+
+                    <p>
+                        Cosmetic dental options can improve the
+                        appearance of your smile based on your
+                        individual needs and treatment plan.
+                    </p>
+
+                    <a
+                        href="/appointment?service=Cosmetic%20Dentistry"
+                        class="service-link"
+                    >
+                        Book This Service
+                        <span>→</span>
+                    </a>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ============================= -->
+    <!-- WHY CHOOSE US -->
+    <!-- ============================= -->
+
+    <section class="why-services">
+
+        <div class="container why-services-grid">
+
+            <div class="why-services-content">
+
+                <span class="section-tag">
+                    WHY CHOOSE CALAWLA
+                </span>
+
+                <h2>
+                    Dental Care Designed
+                    <span>Around You</span>
+                </h2>
+
+                <p>
+                    We believe dental care should be professional,
+                    comfortable and easy to access. Our goal is to
+                    make every visit a positive experience.
+                </p>
+
+
+                <div class="why-list">
+
+                    <div class="why-item">
+
+                        <div class="why-icon">
+                            ✓
+                        </div>
+
+                        <div>
+                            <h4>
+                                Patient-Centered Care
+                            </h4>
+
+                            <p>
+                                We listen to your concerns and
+                                help you understand your treatment.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="why-item">
+
+                        <div class="why-icon">
+                            ✓
+                        </div>
+
+                        <div>
+                            <h4>
+                                Modern Approach
+                            </h4>
+
+                            <p>
+                                We aim to provide organized,
+                                professional and comfortable care.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="why-item">
+
+                        <div class="why-icon">
+                            ✓
+                        </div>
+
+                        <div>
+                            <h4>
+                                Friendly Environment
+                            </h4>
+
+                            <p>
+                                Your comfort and confidence are
+                                important throughout your visit.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <a
+                    href="/appointment"
+                    class="btn-primary"
+                >
+                    Schedule Your Visit
+                </a>
+
+            </div>
+
+
+            <div class="why-services-card">
+
+                <div class="big-plus">
+                    +
+                </div>
+
+                <span>
+                    CALAWLA
+                </span>
+
+                <h3>
+                    Your Smile.
+                    <br>
+                    Our Care.
+                </h3>
+
+                <p>
+                    Professional dental care with a personal touch.
+                </p>
+
+                <a href="/contact">
+                    Contact Us →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ============================= -->
+    <!-- APPOINTMENT CTA -->
+    <!-- ============================= -->
+
+    <section class="services-cta">
+
+        <div class="container">
+
+            <div class="cta-content">
+
+                <div>
+
+                    <span class="section-tag">
+                        READY FOR A HEALTHIER SMILE?
+                    </span>
+
+                    <h2>
+                        Book Your Dental
+                        <span>Appointment Today</span>
+                    </h2>
+
+                    <p>
+                        Take the first step toward better oral health.
+                        Our team is ready to help you.
+                    </p>
+
+                </div>
+
+
+                <div class="cta-buttons">
+
+                    <a
+                        href="/appointment"
+                        class="btn-white"
+                    >
+                        Book Appointment
+                    </a>
+
+                    <a
+                        href="/contact"
+                        class="btn-outline-white"
+                    >
+                        Contact Us
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ============================= -->
+    <!-- FOOTER -->
+    <!-- ============================= -->
+
+    <footer class="footer">
+
+        <div class="container footer-grid">
+
+
+            <div class="footer-brand">
+
+                <a href="/" class="logo footer-logo">
+
+                    <span class="logo-icon">
+                        ✚
+                    </span>
+
+                    <span>
+                        Calawla <strong>Dental</strong>
+                    </span>
+
+                </a>
+
+                <p>
+                    Professional dental care designed to help
+                    you and your family maintain healthy,
+                    confident smiles.
+                </p>
+
+
+                <div class="footer-socials">
+
+                    <a href="#" aria-label="Facebook">
+                        f
+                    </a>
+
+                    <a href="#" aria-label="Instagram">
+                        ◎
+                    </a>
+
+                    <a href="#" aria-label="WhatsApp">
+                        ☎
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <a href="/">
+                    Home
+                </a>
+
+                <a href="/about">
+                    About Us
+                </a>
+
+                <a href="/services">
+                    Services
+                </a>
+
+                <a href="/doctors">
+                    Our Doctors
+                </a>
+
+                <a href="/contact">
+                    Contact
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Our Services
+                </h3>
+
+                <a href="/appointment?service=Dental%20Checkup">
+                    Dental Checkup
+                </a>
+
+                <a href="/appointment?service=Teeth%20Cleaning">
+                    Teeth Cleaning
+                </a>
+
+                <a href="/appointment?service=Teeth%20Whitening">
+                    Teeth Whitening
+                </a>
+
+                <a href="/appointment?service=Braces%20and%20Orthodontics">
+                    Braces
+                </a>
+
+                <a href="/appointment?service=Dental%20Implants">
+                    Dental Implants
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Contact
+                </h3>
+
+                <p>
+                    📍 Calawla Dental Clinic
+                </p>
+
+                <p>
+                    📞 Your Phone Number
+                </p>
+
+                <p>
+                    ✉️ Your Email Address
+                </p>
+
+                <p>
+                    🕐 Mon - Sat: 8:00 AM - 6:00 PM
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <div class="container">
+
+                <p>
+                    © 2026 Calawla Dental Clinic.
+                    All Rights Reserved.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ============================= -->
+    <!-- MOBILE MENU SCRIPT -->
+    <!-- ============================= -->
+
+    <script>
+
+        const menuToggle =
+            document.getElementById("menuToggle");
+
+        const mobileMenu =
+            document.getElementById("mobileMenu");
+
+
+        menuToggle.addEventListener("click", function () {
+
+            const isOpen =
+                mobileMenu.classList.toggle("show");
+
+            menuToggle.classList.toggle("open");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                isOpen
+            );
+
+        });
+
+
+        const mobileLinks =
+            mobileMenu.querySelectorAll("a");
+
+
+        mobileLinks.forEach(function (link) {
+
+            link.addEventListener("click", function () {
+
+                mobileMenu.classList.remove("show");
+
+                menuToggle.classList.remove("open");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>

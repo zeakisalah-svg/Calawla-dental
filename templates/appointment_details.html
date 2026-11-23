@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Patient Details | Calawla Dental
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+
+<body class="admin-page">
+
+
+<header class="admin-navbar">
+
+    <div class="container admin-nav-content">
+
+
+        <a
+            href="/"
+            class="logo"
+        >
+
+            <span class="logo-icon">
+                ✚
+            </span>
+
+            <span>
+                Calawla <strong>Dental</strong>
+            </span>
+
+        </a>
+
+
+        <div class="admin-nav-right">
+
+            <span class="admin-label">
+                PATIENT DETAILS
+            </span>
+
+
+            <a
+                href="/admin/dashboard"
+                class="admin-home-btn"
+            >
+                ← Dashboard
+            </a>
+
+
+            <a
+                href="/admin/logout"
+                class="admin-logout-btn"
+            >
+                Logout
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<main class="patient-details-page">
+
+    <div class="container">
+
+
+        <div class="details-top">
+
+            <a
+                href="/admin/dashboard"
+                class="back-dashboard"
+            >
+                ← Back to Dashboard
+            </a>
+
+
+            <span class="details-label">
+                APPOINTMENT #{{ appointment["id"] }}
+            </span>
+
+        </div>
+
+
+        <section class="patient-profile-card">
+
+
+            <div class="profile-main">
+
+
+                <div class="large-patient-avatar">
+
+                    {{
+                        appointment["name"][0]
+                        |upper
+                    }}
+
+                </div>
+
+
+                <div>
+
+                    <span class="profile-tag">
+                        PATIENT
+                    </span>
+
+
+                    <h1>
+                        {{ appointment["name"] }}
+                    </h1>
+
+
+                    <p>
+                        {{ appointment["service"] }}
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+            <div>
+
+
+                {% if appointment["status"] == "Confirmed" %}
+
+                    <span
+                        class="
+                            status-badge
+                            confirmed
+                            large-status
+                        "
+                    >
+                        ● Confirmed
+                    </span>
+
+
+                {% elif appointment["status"] == "Cancelled" %}
+
+                    <span
+                        class="
+                            status-badge
+                            cancelled
+                            large-status
+                        "
+                    >
+                        ● Cancelled
+                    </span>
+
+
+                {% else %}
+
+                    <span
+                        class="
+                            status-badge
+                            pending
+                            large-status
+                        "
+                    >
+                        ● Pending
+                    </span>
+
+                {% endif %}
+
+
+            </div>
+
+
+        </section>
+
+
+        <div class="details-grid">
+
+
+            <!-- =================================================
+                 APPOINTMENT INFORMATION
+            ================================================== -->
+
+            <section class="details-card">
+
+
+                <div class="details-card-heading">
+
+                    <span>
+                        📅
+                    </span>
+
+                    <div>
+
+                        <small>
+                            APPOINTMENT
+                        </small>
+
+                        <h2>
+                            Visit Information
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="details-list">
+
+
+                    <div class="detail-row">
+
+                        <span>
+                            Dental Service
+                        </span>
+
+                        <strong>
+                            {{ appointment["service"] }}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <span>
+                            Date
+                        </span>
+
+                        <strong>
+                            {{ appointment["appointment_date"] }}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <span>
+                            Time
+                        </span>
+
+                        <strong>
+                            {{ appointment["appointment_time"] }}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <span>
+                            Status
+                        </span>
+
+
+                        {% if appointment["status"] == "Confirmed" %}
+
+                            <strong class="green-text">
+                                Confirmed
+                            </strong>
+
+
+                        {% elif appointment["status"] == "Cancelled" %}
+
+                            <strong class="red-text">
+                                Cancelled
+                            </strong>
+
+
+                        {% else %}
+
+                            <strong class="orange-text">
+                                Pending
+                            </strong>
+
+                        {% endif %}
+
+                    </div>
+
+
+                    {% if appointment["created_at"] %}
+
+                    <div class="detail-row">
+
+                        <span>
+                            Request Received
+                        </span>
+
+                        <strong>
+                            {{ appointment["created_at"] }}
+                        </strong>
+
+                    </div>
+
+                    {% endif %}
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 CONTACT
+            ================================================== -->
+
+            <section class="details-card">
+
+
+                <div class="details-card-heading">
+
+                    <span>
+                        👤
+                    </span>
+
+                    <div>
+
+                        <small>
+                            PATIENT
+                        </small>
+
+                        <h2>
+                            Contact Information
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="details-list">
+
+
+                    <div class="detail-row">
+
+                        <span>
+                            Full Name
+                        </span>
+
+                        <strong>
+                            {{ appointment["name"] }}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <span>
+                            Phone
+                        </span>
+
+                        <strong>
+                            {{ appointment["phone"] }}
+                        </strong>
+
+                    </div>
+
+
+                    {% if appointment["email"] %}
+
+                    <div class="detail-row">
+
+                        <span>
+                            Email
+                        </span>
+
+                        <strong>
+                            {{ appointment["email"] }}
+                        </strong>
+
+                    </div>
+
+                    {% endif %}
+
+
+                </div>
+
+
+                <div class="patient-contact-actions">
+
+
+                    <a
+                        href="tel:{{ appointment['phone'] }}"
+                        class="big-contact-btn call"
+                    >
+                        📞 Call Patient
+                    </a>
+
+
+                    <a
+                        href="https://wa.me/{{ appointment['phone']|replace('+', '')|replace(' ', '')|replace('-', '') }}"
+                        target="_blank"
+                        class="big-contact-btn whatsapp"
+                    >
+                        💬 WhatsApp
+                    </a>
+
+
+                    {% if appointment["email"] %}
+
+                    <a
+                        href="mailto:{{ appointment['email'] }}"
+                        class="big-contact-btn email"
+                    >
+                        ✉ Send Email
+                    </a>
+
+                    {% endif %}
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 PATIENT MESSAGE
+            ================================================== -->
+
+            <section class="details-card full-details-card">
+
+
+                <div class="details-card-heading">
+
+                    <span>
+                        📝
+                    </span>
+
+                    <div>
+
+                        <small>
+                            PATIENT REQUEST
+                        </small>
+
+                        <h2>
+                            Additional Message
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="patient-message-box">
+
+                    {% if appointment["message"] %}
+
+                        {{ appointment["message"] }}
+
+                    {% else %}
+
+                        <span>
+                            No additional message
+                            was provided by the patient.
+                        </span>
+
+                    {% endif %}
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 ADMIN ACTIONS
+            ================================================== -->
+
+            <section class="details-card full-details-card">
+
+
+                <div class="details-card-heading">
+
+                    <span>
+                        ⚙️
+                    </span>
+
+                    <div>
+
+                        <small>
+                            ADMINISTRATION
+                        </small>
+
+                        <h2>
+                            Appointment Actions
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="detail-actions">
+
+
+                    {% if appointment["status"] != "Confirmed" %}
+
+                    <form
+                        action="{{
+                            url_for(
+                                'confirm_appointment',
+                                appointment_id=appointment['id']
+                            )
+                        }}"
+                        method="POST"
+                    >
+
+                        <button
+                            type="submit"
+                            class="detail-action confirm"
+                        >
+                            ✓ Confirm Appointment
+                        </button>
+
+                    </form>
+
+                    {% endif %}
+
+
+                    {% if appointment["status"] != "Cancelled" %}
+
+                    <form
+                        action="{{
+                            url_for(
+                                'cancel_appointment',
+                                appointment_id=appointment['id']
+                            )
+                        }}"
+                        method="POST"
+                    >
+
+                        <button
+                            type="submit"
+                            class="detail-action cancel"
+                        >
+                            ✕ Cancel Appointment
+                        </button>
+
+                    </form>
+
+                    {% endif %}
+
+
+                    <form
+                        action="{{
+                            url_for(
+                                'delete_appointment_route',
+                                appointment_id=appointment['id']
+                            )
+                        }}"
+                        method="POST"
+                        onsubmit="
+                            return confirm(
+                                'Delete this appointment permanently?'
+                            );
+                        "
+                    >
+
+                        <button
+                            type="submit"
+                            class="detail-action delete"
+                        >
+                            🗑 Delete Appointment
+                        </button>
+
+                    </form>
+
+
+                </div>
+
+
+            </section>
+
+
+        </div>
+
+
+    </div>
+
+</main>
+
+
+<footer class="admin-footer">
+
+    <p>
+        © 2026 Calawla Dental Clinic
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>

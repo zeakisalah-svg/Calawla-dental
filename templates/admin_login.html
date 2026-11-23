@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Login | Calawla Dental</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body class="new-admin-login">
+
+    <div class="medical-bg">
+        <span class="bubble bubble-1"></span>
+        <span class="bubble bubble-2"></span>
+        <span class="bubble bubble-3"></span>
+        <span class="pill-shape pill-1"></span>
+        <span class="pill-shape pill-2"></span>
+    </div>
+
+    <main class="login-screen">
+
+        <section class="login-card">
+
+            <!-- BRAND -->
+
+            <a href="{{ url_for('home') }}" class="login-brand">
+
+                <span class="brand-icon">
+                    ✚
+                </span>
+
+                <span class="brand-name">
+                    Calawla
+                    <strong>Dental</strong>
+                </span>
+
+            </a>
+
+
+            <!-- MEDICAL BADGE -->
+
+            <div class="login-badge">
+                <span></span>
+                ADMINISTRATION
+            </div>
+
+
+            <!-- TITLE -->
+
+            <div class="login-title">
+
+                <h1>
+                    Welcome Back
+                </h1>
+
+                <p>
+                    Sign in to your clinic dashboard
+                </p>
+
+            </div>
+
+
+            <!-- FLASH MESSAGE -->
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+
+                {% if messages %}
+
+                    <div class="login-messages">
+
+                        {% for category, message in messages %}
+
+                            <div class="login-message {{ category }}">
+
+                                <span>
+                                    {% if category == "success" %}
+                                        ✓
+                                    {% else %}
+                                        !
+                                    {% endif %}
+                                </span>
+
+                                {{ message }}
+
+                            </div>
+
+                        {% endfor %}
+
+                    </div>
+
+                {% endif %}
+
+            {% endwith %}
+
+
+            <!-- FORM -->
+
+            <form
+                action="{{ url_for('admin_login') }}"
+                method="POST"
+                class="new-login-form"
+            >
+
+                <!-- USERNAME -->
+
+                <div class="new-field">
+
+                    <label for="username">
+                        Username
+                    </label>
+
+                    <div class="new-input">
+
+                        <span>👤</span>
+
+                        <input
+                            type="text"
+                            id="username"
+                            name="username"
+                            placeholder="Enter username"
+                            autocomplete="username"
+                            required
+                            autofocus
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- PASSWORD -->
+
+                <div class="new-field">
+
+                    <div class="password-label">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <small>
+                            🔒 Secure
+                        </small>
+
+                    </div>
+
+                    <div class="new-input">
+
+                        <span>🔑</span>
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter password"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- LOGIN -->
+
+                <button
+                    type="submit"
+                    class="new-login-button"
+                >
+
+                    <span>
+                        Sign In
+                    </span>
+
+                    <strong>
+                        →
+                    </strong>
+
+                </button>
+
+            </form>
+
+
+            <!-- BACK -->
+
+            <a
+                href="{{ url_for('home') }}"
+                class="login-back"
+            >
+                ← Back to Calawla Dental
+            </a>
+
+
+            <!-- SMALL FOOTER -->
+
+            <div class="login-footer">
+
+                <span>🦷</span>
+
+                <div>
+                    <strong>
+                        Calawla Dental
+                    </strong>
+
+                    <small>
+                        Secure Clinic Management
+                    </small>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>

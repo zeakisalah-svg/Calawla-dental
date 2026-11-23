@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Book your dental appointment at Calawla Dental Clinic."
+    >
+
+    <meta name="theme-color" content="#7138a8">
+
+    <title>Book Appointment | Calawla Dental Clinic</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+</head>
+
+<body>
+
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+    <header class="navbar">
+
+        <div class="container nav-content">
+
+            <a href="/" class="logo">
+
+                <span class="logo-icon">
+                    ✚
+                </span>
+
+                <span>
+                    Calawla <strong>Dental</strong>
+                </span>
+
+            </a>
+
+
+            <nav class="nav-links">
+
+                <a href="/">
+                    Home
+                </a>
+
+                <a href="/services">
+                    Services
+                </a>
+
+                <a href="/about">
+                    About Us
+                </a>
+
+                <a href="/doctors">
+                    Our Doctors
+                </a>
+
+                <a href="/contact">
+                    Contact
+                </a>
+
+            </nav>
+
+
+            <a
+                href="/appointment"
+                class="nav-btn active"
+            >
+                Book Appointment
+            </a>
+
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                type="button"
+                aria-label="Open menu"
+                aria-expanded="false"
+            >
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </div>
+
+
+        <!-- MOBILE MENU -->
+
+        <nav
+            class="mobile-menu"
+            id="mobileMenu"
+        >
+
+            <a href="/">
+                Home
+            </a>
+
+            <a href="/services">
+                Services
+            </a>
+
+            <a href="/about">
+                About Us
+            </a>
+
+            <a href="/doctors">
+                Our Doctors
+            </a>
+
+            <a href="/contact">
+                Contact
+            </a>
+
+            <a href="/appointment">
+                Book Appointment
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         APPOINTMENT HERO
+    ====================================================== -->
+
+    <section class="appointment-hero">
+
+        <div class="container">
+
+            <div class="appointment-hero-content">
+
+                <span class="section-tag">
+                    CALAWLA DENTAL CLINIC
+                </span>
+
+                <h1>
+                    Book Your
+                    <span>Appointment</span>
+                </h1>
+
+                <p>
+                    Take the first step toward a healthier,
+                    brighter and more confident smile.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         APPOINTMENT SECTION
+    ====================================================== -->
+
+    <section class="appointment-section">
+
+        <div class="container appointment-layout">
+
+
+            <!-- =================================================
+                 LEFT INFORMATION
+            ================================================== -->
+
+            <div class="appointment-info">
+
+                <span class="section-tag">
+                    EASY & SIMPLE
+                </span>
+
+                <h2>
+                    Your Smile
+                    <span>Starts Here.</span>
+                </h2>
+
+                <p class="appointment-description">
+                    Complete the form and send us your preferred
+                    appointment details. Our clinic team can
+                    review your request and contact you.
+                </p>
+
+
+                <!-- INFO CARD -->
+
+                <div class="appointment-info-card">
+
+                    <div class="info-card-icon">
+                        🦷
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Professional Dental Care
+                        </h3>
+
+                        <p>
+                            Personalized care for you and
+                            your family's dental needs.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- INFO CARD -->
+
+                <div class="appointment-info-card">
+
+                    <div class="info-card-icon">
+                        ⏰
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Flexible Scheduling
+                        </h3>
+
+                        <p>
+                            Choose a preferred date and time
+                            that works for you.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- INFO CARD -->
+
+                <div class="appointment-info-card">
+
+                    <div class="info-card-icon">
+                        ❤️
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Patient First
+                        </h3>
+
+                        <p>
+                            Your comfort and experience
+                            are important to us.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- EMERGENCY -->
+
+                <div class="appointment-emergency">
+
+                    <div class="emergency-icon">
+                        📞
+                    </div>
+
+                    <div>
+
+                        <span>
+                            NEED HELP?
+                        </span>
+
+                        <h3>
+                            Contact Our Clinic
+                        </h3>
+
+                        <p>
+                            Call us if you need assistance
+                            before booking.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 APPOINTMENT FORM
+            ================================================== -->
+
+            <div class="appointment-card">
+
+                <div class="appointment-card-header">
+
+                    <div>
+
+                        <span>
+                            APPOINTMENT REQUEST
+                        </span>
+
+                        <h2>
+                            Book Your Visit
+                        </h2>
+
+                    </div>
+
+                    <div class="appointment-card-icon">
+                        📅
+                    </div>
+
+                </div>
+
+
+                <!-- FLASH MESSAGES -->
+
+                {% with messages = get_flashed_messages(with_categories=true) %}
+
+                    {% if messages %}
+
+                        <div class="flash-container">
+
+                            {% for category, message in messages %}
+
+                                <div
+                                    class="flash-message {{ category }}"
+                                >
+
+                                    {% if category == "success" %}
+                                        ✓
+                                    {% else %}
+                                        !
+                                    {% endif %}
+
+                                    <span>
+                                        {{ message }}
+                                    </span>
+
+                                </div>
+
+                            {% endfor %}
+
+                        </div>
+
+                    {% endif %}
+
+                {% endwith %}
+
+
+
+                <!-- FORM -->
+
+                <form
+                    action="{{ url_for('appointment') }}"
+                    method="POST"
+                    class="appointment-form"
+                >
+
+
+                    <!-- NAME + PHONE -->
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="name">
+                                Full Name
+                                <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Enter your full name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="phone">
+                                Phone Number
+                                <span>*</span>
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                placeholder="+252 63 XXX XXXX"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- EMAIL + SERVICE -->
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="email">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="your@email.com"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="service">
+                                Dental Service
+                                <span>*</span>
+                            </label>
+
+                            <select
+                                id="service"
+                                name="service"
+                                required
+                            >
+
+                                <option value="">
+                                    Select a service
+                                </option>
+
+                                <option value="Dental Checkup">
+                                    Dental Checkup
+                                </option>
+
+                                <option value="Teeth Cleaning">
+                                    Teeth Cleaning
+                                </option>
+
+                                <option value="Teeth Whitening">
+                                    Teeth Whitening
+                                </option>
+
+                                <option value="Dental Filling">
+                                    Dental Filling
+                                </option>
+
+                                <option value="Root Canal Treatment">
+                                    Root Canal Treatment
+                                </option>
+
+                                <option value="Tooth Extraction">
+                                    Tooth Extraction
+                                </option>
+
+                                <option value="Braces and Orthodontics">
+                                    Braces & Orthodontics
+                                </option>
+
+                                <option value="Dental Crowns">
+                                    Dental Crowns
+                                </option>
+
+                                <option value="Dental Implants">
+                                    Dental Implants
+                                </option>
+
+                                <option value="Children's Dentistry">
+                                    Children's Dentistry
+                                </option>
+
+                                <option value="Gum Care">
+                                    Gum Care
+                                </option>
+
+                                <option value="Cosmetic Dentistry">
+                                    Cosmetic Dentistry
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- DATE + TIME -->
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="appointment_date">
+                                Preferred Date
+                                <span>*</span>
+                            </label>
+
+                            <input
+                                type="date"
+                                id="appointment_date"
+                                name="appointment_date"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="appointment_time">
+                                Preferred Time
+                                <span>*</span>
+                            </label>
+
+                            <select
+                                id="appointment_time"
+                                name="appointment_time"
+                                required
+                            >
+
+                                <option value="">
+                                    Select a time
+                                </option>
+
+                                <option value="08:00 AM">
+                                    08:00 AM
+                                </option>
+
+                                <option value="09:00 AM">
+                                    09:00 AM
+                                </option>
+
+                                <option value="10:00 AM">
+                                    10:00 AM
+                                </option>
+
+                                <option value="11:00 AM">
+                                    11:00 AM
+                                </option>
+
+                                <option value="12:00 PM">
+                                    12:00 PM
+                                </option>
+
+                                <option value="01:00 PM">
+                                    01:00 PM
+                                </option>
+
+                                <option value="02:00 PM">
+                                    02:00 PM
+                                </option>
+
+                                <option value="03:00 PM">
+                                    03:00 PM
+                                </option>
+
+                                <option value="04:00 PM">
+                                    04:00 PM
+                                </option>
+
+                                <option value="05:00 PM">
+                                    05:00 PM
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- MESSAGE -->
+
+                    <div class="form-group">
+
+                        <label for="message">
+                            Message / Additional Information
+                        </label>
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="5"
+                            placeholder="Tell us anything we should know before your visit..."
+                        ></textarea>
+
+                    </div>
+
+
+
+                    <!-- TERMS -->
+
+                    <div class="appointment-note">
+
+                        <span>
+                            🔒
+                        </span>
+
+                        <p>
+                            Please provide accurate contact
+                            information so our clinic team can
+                            respond to your appointment request.
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- SUBMIT -->
+
+                    <button
+                        type="submit"
+                        class="appointment-submit"
+                    >
+
+                        <span>
+                            Book Appointment
+                        </span>
+
+                        <span class="submit-arrow">
+                            →
+                        </span>
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="footer">
+
+        <div class="container footer-grid">
+
+
+            <!-- BRAND -->
+
+            <div class="footer-brand">
+
+                <a href="/" class="logo footer-logo">
+
+                    <span class="logo-icon">
+                        ✚
+                    </span>
+
+                    <span>
+                        Calawla <strong>Dental</strong>
+                    </span>
+
+                </a>
+
+                <p>
+                    Professional dental care designed to help
+                    you and your family maintain healthy,
+                    confident smiles.
+                </p>
+
+
+                <div class="footer-socials">
+
+                    <a
+                        href="#"
+                        aria-label="Facebook"
+                    >
+                        f
+                    </a>
+
+                    <a
+                        href="#"
+                        aria-label="Instagram"
+                    >
+                        ◎
+                    </a>
+
+                    <a
+                        href="#"
+                        aria-label="WhatsApp"
+                    >
+                        ☎
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- QUICK LINKS -->
+
+            <div class="footer-column">
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <a href="/">
+                    Home
+                </a>
+
+                <a href="/about">
+                    About Us
+                </a>
+
+                <a href="/services">
+                    Services
+                </a>
+
+                <a href="/doctors">
+                    Our Doctors
+                </a>
+
+                <a href="/contact">
+                    Contact
+                </a>
+
+            </div>
+
+
+            <!-- SERVICES -->
+
+            <div class="footer-column">
+
+                <h3>
+                    Services
+                </h3>
+
+                <a href="/services">
+                    Dental Checkup
+                </a>
+
+                <a href="/services">
+                    Teeth Cleaning
+                </a>
+
+                <a href="/services">
+                    Teeth Whitening
+                </a>
+
+                <a href="/services">
+                    Braces
+                </a>
+
+                <a href="/services">
+                    Dental Implants
+                </a>
+
+            </div>
+
+
+            <!-- CONTACT -->
+
+            <div class="footer-column">
+
+                <h3>
+                    Contact
+                </h3>
+
+                <p>
+                    📍 Calawla Dental Clinic
+                </p>
+
+                <p>
+                    📞 Your Phone Number
+                </p>
+
+                <p>
+                    ✉️ Your Email Address
+                </p>
+
+                <p>
+                    🕐 Mon - Sat: 8:00 AM - 6:00 PM
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <div class="container">
+
+                <p>
+                    © 2026 Calawla Dental Clinic.
+                    All Rights Reserved.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+        /* ================================
+           MOBILE MENU
+        ================================= */
+
+        const menuToggle =
+            document.getElementById("menuToggle");
+
+        const mobileMenu =
+            document.getElementById("mobileMenu");
+
+
+        if (menuToggle && mobileMenu) {
+
+            menuToggle.addEventListener(
+                "click",
+                function () {
+
+                    const isOpen =
+                        mobileMenu.classList.toggle("show");
+
+                    menuToggle.classList.toggle("open");
+
+                    menuToggle.setAttribute(
+                        "aria-expanded",
+                        isOpen
+                    );
+
+                }
+            );
+
+        }
+
+
+        /* ================================
+           MINIMUM DATE
+        ================================= */
+
+        const dateInput =
+            document.getElementById(
+                "appointment_date"
+            );
+
+
+        if (dateInput) {
+
+            const today =
+                new Date().toISOString().split("T")[0];
+
+            dateInput.min = today;
+
+        }
+
+
+        /* ================================
+           SERVICE FROM URL
+        ================================= */
+
+        const params =
+            new URLSearchParams(
+                window.location.search
+            );
+
+        const selectedService =
+            params.get("service");
+
+
+        const serviceSelect =
+            document.getElementById("service");
+
+
+        if (
+            selectedService &&
+            serviceSelect
+        ) {
+
+            const options =
+                Array.from(
+                    serviceSelect.options
+                );
+
+            const matchingOption =
+                options.find(
+                    option =>
+                        option.value.toLowerCase() ===
+                        selectedService.toLowerCase()
+                );
+
+
+            if (matchingOption) {
+
+                serviceSelect.value =
+                    matchingOption.value;
+
+            }
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

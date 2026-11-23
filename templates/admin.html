@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Admin Dashboard | Calawla Dental
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+
+<body class="new-admin-dashboard">
+
+
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
+
+<aside class="dashboard-sidebar">
+
+    <a
+        href="{{ url_for('home') }}"
+        class="dashboard-brand"
+    >
+
+        <span class="dashboard-brand-icon">
+            ✚
+        </span>
+
+        <span>
+            Calawla
+            <strong>Dental</strong>
+        </span>
+
+    </a>
+
+
+    <div class="sidebar-label">
+        CLINIC
+    </div>
+
+
+    <nav class="dashboard-nav">
+
+        <a
+            href="#appointments"
+            class="active"
+        >
+            <span>📅</span>
+            <span>Appointments</span>
+        </a>
+
+
+        <a href="#patients">
+
+            <span>👥</span>
+            <span>Patients</span>
+
+        </a>
+
+
+        <a href="{{ url_for('home') }}">
+
+            <span>🌐</span>
+            <span>Website</span>
+
+        </a>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <a
+            href="{{ url_for('admin_logout') }}"
+            class="sidebar-logout"
+        >
+
+            <span>↪</span>
+
+            Logout
+
+        </a>
+
+    </div>
+
+</aside>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="dashboard-main">
+
+
+    <!-- TOP BAR -->
+
+    <header class="dashboard-topbar">
+
+        <div>
+
+            <span class="dashboard-kicker">
+                CALAWLA DENTAL CLINIC
+            </span>
+
+            <h1>
+                Admin Dashboard
+            </h1>
+
+            <p>
+                Manage your clinic appointments with ease.
+            </p>
+
+        </div>
+
+
+        <div class="dashboard-user">
+
+            <div class="user-avatar">
+                A
+            </div>
+
+            <div>
+
+                <strong>
+                    Administrator
+                </strong>
+
+                <small>
+                    Clinic Admin
+                </small>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- MEDICAL DECOR -->
+
+    <div class="dashboard-water-shape"></div>
+
+
+
+    <!-- STATS -->
+
+    <section class="dashboard-stats">
+
+
+        <!-- TOTAL -->
+
+        <article class="stat-card purple">
+
+            <div class="stat-icon">
+                📋
+            </div>
+
+            <div>
+
+                <span>
+                    TOTAL
+                </span>
+
+                <strong>
+                    {{ total_appointments }}
+                </strong>
+
+                <small>
+                    All appointments
+                </small>
+
+            </div>
+
+        </article>
+
+
+        <!-- PENDING -->
+
+        <article class="stat-card red">
+
+            <div class="stat-icon">
+                ⏳
+            </div>
+
+            <div>
+
+                <span>
+                    PENDING
+                </span>
+
+                <strong>
+                    {{ pending_appointments }}
+                </strong>
+
+                <small>
+                    Awaiting confirmation
+                </small>
+
+            </div>
+
+        </article>
+
+
+        <!-- CONFIRMED -->
+
+        <article class="stat-card success">
+
+            <div class="stat-icon">
+                ✓
+            </div>
+
+            <div>
+
+                <span>
+                    CONFIRMED
+                </span>
+
+                <strong>
+                    {{ confirmed_appointments }}
+                </strong>
+
+                <small>
+                    Confirmed bookings
+                </small>
+
+            </div>
+
+        </article>
+
+
+        <!-- CANCELLED -->
+
+        <article class="stat-card cancelled">
+
+            <div class="stat-icon">
+                ×
+            </div>
+
+            <div>
+
+                <span>
+                    CANCELLED
+                </span>
+
+                <strong>
+                    {{ cancelled_appointments }}
+                </strong>
+
+                <small>
+                    Cancelled bookings
+                </small>
+
+            </div>
+
+        </article>
+
+
+    </section>
+
+
+
+    <!-- APPOINTMENTS -->
+
+    <section
+        class="appointments-section"
+        id="appointments"
+    >
+
+        <div class="section-heading">
+
+            <div>
+
+                <span>
+                    CLINIC MANAGEMENT
+                </span>
+
+                <h2>
+                    Appointments
+                </h2>
+
+            </div>
+
+
+            <a
+                href="{{ url_for('admin_dashboard') }}"
+                class="refresh-button"
+            >
+                ↻ Refresh
+            </a>
+
+        </div>
+
+
+
+        <!-- SEARCH / FILTER -->
+
+        <div class="appointment-toolbar">
+
+            <div class="search-box">
+
+                <span>
+                    🔎
+                </span>
+
+                <input
+                    type="text"
+                    id="appointmentSearch"
+                    placeholder="Search appointments..."
+                >
+
+            </div>
+
+
+            <select id="statusFilter">
+
+                <option value="all">
+                    All Status
+                </option>
+
+                <option value="pending">
+                    Pending
+                </option>
+
+                <option value="confirmed">
+                    Confirmed
+                </option>
+
+                <option value="cancelled">
+                    Cancelled
+                </option>
+
+            </select>
+
+        </div>
+
+
+
+        <!-- TABLE -->
+
+        <div class="appointments-table-wrapper">
+
+            <table class="appointments-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Patient
+                        </th>
+
+                        <th>
+                            Date
+                        </th>
+
+                        <th>
+                            Time
+                        </th>
+
+                        <th>
+                            Service
+                        </th>
+
+                        <th>
+                            Status
+                        </th>
+
+                        <th>
+                            Action
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="appointmentsTable">
+
+                    {% for appointment in appointments %}
+
+                    <tr>
+
+                        <td>
+
+                            <div class="patient-cell">
+
+                                <div class="patient-avatar">
+                                    {{ appointment.name[0] | upper }}
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        {{ appointment.name }}
+                                    </strong>
+
+                                    <small>
+                                        {{ appointment.phone }}
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+                        </td>
+
+
+                        <td>
+                            {{ appointment.date }}
+                        </td>
+
+
+                        <td>
+                            {{ appointment.time }}
+                        </td>
+
+
+                        <td>
+                            {{ appointment.service }}
+                        </td>
+
+
+                        <td>
+
+                            <span
+                                class="appointment-status
+                                {{ appointment.status }}"
+                            >
+
+                                {{ appointment.status | capitalize }}
+
+                            </span>
+
+                        </td>
+
+
+                        <td>
+
+                            <div class="appointment-actions">
+
+                                <a
+                                    href="{{ url_for('appointment_details', appointment_id=appointment.id) }}"
+                                    class="view-button"
+                                >
+                                    View
+                                </a>
+
+
+                                {% if appointment.status == "pending" %}
+
+                                    <form
+                                        method="POST"
+                                        action="{{ url_for('confirm_appointment', appointment_id=appointment.id) }}"
+                                    >
+
+                                        <button
+                                            type="submit"
+                                            class="confirm-button"
+                                        >
+                                            ✓
+                                        </button>
+
+                                    </form>
+
+
+                                    <form
+                                        method="POST"
+                                        action="{{ url_for('cancel_appointment', appointment_id=appointment.id) }}"
+                                    >
+
+                                        <button
+                                            type="submit"
+                                            class="cancel-button"
+                                        >
+                                            ×
+                                        </button>
+
+                                    </form>
+
+                                {% endif %}
+
+                            </div>
+
+                        </td>
+
+                    </tr>
+
+                    {% else %}
+
+                    <tr>
+
+                        <td
+                            colspan="6"
+                            class="empty-appointments"
+                        >
+
+                            <div>
+                                🦷
+                            </div>
+
+                            <strong>
+                                No appointments yet
+                            </strong>
+
+                            <span>
+                                New patient bookings will appear here.
+                            </span>
+
+                        </td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- MOBILE QUICK BAR -->
+
+    <div class="mobile-dashboard-nav">
+
+        <a href="#appointments">
+            📅
+            <span>Appointments</span>
+        </a>
+
+        <a href="#patients">
+            👥
+            <span>Patients</span>
+        </a>
+
+        <a href="{{ url_for('home') }}">
+            🌐
+            <span>Website</span>
+        </a>
+
+        <a href="{{ url_for('admin_logout') }}">
+            ↪
+            <span>Logout</span>
+        </a>
+
+    </div>
+
+
+</main>
+
+
+
+<script>
+
+const searchInput =
+    document.getElementById("appointmentSearch");
+
+const statusFilter =
+    document.getElementById("statusFilter");
+
+const rows =
+    document.querySelectorAll("#appointmentsTable tr");
+
+
+function filterAppointments() {
+
+    const search =
+        searchInput.value.toLowerCase();
+
+    const status =
+        statusFilter.value.toLowerCase();
+
+
+    rows.forEach(row => {
+
+        const text =
+            row.innerText.toLowerCase();
+
+
+        const matchesSearch =
+            text.includes(search);
+
+
+        const matchesStatus =
+            status === "all" ||
+            text.includes(status);
+
+
+        row.style.display =
+            matchesSearch && matchesStatus
+                ? ""
+                : "none";
+
+    });
+
+}
+
+
+if (searchInput) {
+    searchInput.addEventListener(
+        "input",
+        filterAppointments
+    );
+}
+
+
+if (statusFilter) {
+    statusFilter.addEventListener(
+        "change",
+        filterAppointments
+    );
+}
+
+</script>
+
+
+</body>
+</html>
