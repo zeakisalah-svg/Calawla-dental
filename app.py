@@ -1,3 +1,6 @@
+import os
+import secrets
+from flask import abort
 from flask import (
     Flask,
     render_template,
@@ -24,22 +27,34 @@ from database import (
 
 app = Flask(__name__)
 
-app.secret_key = "calawla-dental-secret-key-2026"
+app.secret_key = os.environ.get("FLASK_SECRET_KEY") or secrets.token_hex(32)
 
 
 # =========================================================
 # ADMIN SETTINGS
 # =========================================================
 
-ADMIN_USERNAME = "admin"
-ADMIN_PASSWORD = "Calawla@2026"
+ADMIN_USERNAME = os.environ.get("ADMIN_USERNAME", "admin")
+ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD")
 
 
 # =========================================================
 # DATABASE
 # =========================================================
 
-init_db()
+if not os.environ.get("VERCEL"):
+    init_db()
+
+
+# Public Vercel preview is read-only until persistent appointment storage
+# and secure admin authentication have been configured.
+@app.before_request
+def protect_serverless_preview():
+    if os.environ.get("VERCEL") and (
+        request.path.startswith("/admin") or
+        (request.path == "/appointment" and request.method == "POST")
+    ):
+        abort(503, description="Bookings and administration are unavailable in this preview.")
 
 
 # =========================================================
@@ -298,6 +313,8 @@ def admin_login():
 
         if (
             username == ADMIN_USERNAME
+            and
+            ADMIN_PASSWORD is not None
             and
             password == ADMIN_PASSWORD
         ):
