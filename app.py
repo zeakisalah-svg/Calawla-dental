@@ -1,5 +1,9 @@
+import os
+import secrets
+
 from flask import (
     Flask,
+    abort,
     render_template,
     request,
     redirect,
@@ -22,29 +26,41 @@ from database import (
 # APP
 # =========================================================
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="public/static", static_url_path="/static")
 
-app.secret_key = "calawla-dental-secret-key-2026"
+app.secret_key = os.environ.get("SECRET_KEY") or secrets.token_hex(32)
+SITE_PREVIEW = os.environ.get("VERCEL") == "1"
 
 
 # =========================================================
 # ADMIN SETTINGS
 # =========================================================
 
-ADMIN_USERNAME = "admin"
-ADMIN_PASSWORD = "Calawla@2026"
+ADMIN_USERNAME = os.environ.get("ADMIN_USERNAME", "admin")
+ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD")
 
 
 # =========================================================
 # DATABASE
 # =========================================================
 
-init_db()
+if not SITE_PREVIEW:
+    init_db()
 
 
 # =========================================================
 # HELPER - ADMIN LOGIN CHECK
 # =========================================================
+
+@app.before_request
+def restrict_preview():
+    if SITE_PREVIEW and request.path.startswith("/admin"):
+        abort(404)
+    if SITE_PREVIEW and request.endpoint == "appointment":
+        if request.method == "POST":
+            abort(503)
+        return render_template("booking_unavailable.html")
+
 
 def admin_required():
 
@@ -720,13 +736,8 @@ def confirm_appointment(
     # UPDATE
     # -----------------------------------------------------
 
-    update_appointment_status(
-
-        appointment_id,
-
-        "Confirmed"
-
-    )
+    if not update_appointment_status(appointment_id, "Confirmed"):
+        abort(404)
 
 
     flash(
@@ -769,13 +780,8 @@ def complete_appointment(
     # UPDATE STATUS
     # -----------------------------------------------------
 
-    update_appointment_status(
-
-        appointment_id,
-
-        "Completed"
-
-    )
+    if not update_appointment_status(appointment_id, "Completed"):
+        abort(404)
 
 
     flash(
@@ -818,13 +824,8 @@ def cancel_appointment(
     # UPDATE STATUS
     # -----------------------------------------------------
 
-    update_appointment_status(
-
-        appointment_id,
-
-        "Cancelled"
-
-    )
+    if not update_appointment_status(appointment_id, "Cancelled"):
+        abort(404)
 
 
     flash(
@@ -867,9 +868,8 @@ def delete_appointment_route(
     # DELETE
     # -----------------------------------------------------
 
-    delete_appointment(
-        appointment_id
-    )
+    if not delete_appointment(appointment_id):
+        abort(404)
 
 
     flash(
@@ -930,9 +930,9 @@ if __name__ == "__main__":
 
     app.run(
 
-        debug=True,
+        debug=False,
 
-        host="0.0.0.0",
+        host="127.0.0.1",
 
         port=5000
 

@@ -11631,3 +11631,156 @@ html { scroll-behavior: smooth; }
     }
 
 }
+
+/* =========================================================
+   CALAWLA DENTAL — PREMIUM DESIGN REFRESH
+   Additive overrides: preserves the existing page structure.
+========================================================= */
+:root {
+  --red: #0f9f9a;
+  --red-dark: #087d79;
+  --red-light: #e2f7f5;
+  --purple: #12304a;
+  --purple-dark: #0b2237;
+  --purple-light: #eaf2f8;
+  --dark: #102a3a;
+  --dark-soft: #365365;
+  --text: #607786;
+  --muted: #8498a5;
+  --soft: #f4f9fb;
+  --border: #dce8ee;
+  --gradient: linear-gradient(135deg, #0f9f9a 0%, #12304a 100%);
+  --gradient-dark: linear-gradient(135deg, #087d79 0%, #0b2237 100%);
+  --shadow-sm: 0 8px 24px rgba(18, 48, 74, .06);
+  --shadow-md: 0 18px 44px rgba(18, 48, 74, .10);
+  --shadow-lg: 0 28px 70px rgba(18, 48, 74, .15);
+}
+
+html { scroll-padding-top: 100px; }
+body { color: var(--dark); background: #fff; letter-spacing: .005em; }
+::selection { background: #b9efeb; color: #102a3a; }
+
+.navbar {
+  background: rgba(255,255,255,.94) !important;
+  border-bottom: 1px solid rgba(220,232,238,.85) !important;
+  box-shadow: 0 8px 30px rgba(18,48,74,.045) !important;
+  backdrop-filter: blur(16px);
+}
+.logo { color: var(--purple) !important; font-weight: 800 !important; letter-spacing: -.035em; }
+.logo-icon { background: var(--gradient) !important; box-shadow: 0 8px 18px rgba(15,159,154,.2); }
+.nav-links a { color: #4f6878 !important; font-weight: 600 !important; transition: color .2s ease, background .2s ease; }
+.nav-links a:hover, .nav-links a.active { color: var(--red) !important; }
+.nav-btn, .primary-btn, .appointment-submit, .new-login-button {
+  background: var(--gradient) !important;
+  border: 0 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 22px rgba(15,159,154,.18);
+  transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+}
+.nav-btn:hover, .primary-btn:hover, .appointment-submit:hover, .new-login-button:hover {
+  transform: translateY(-2px); box-shadow: 0 14px 28px rgba(15,159,154,.24); filter: saturate(1.08);
+}
+
+.hero, .appointment-hero, .page-hero, .page-header {
+  background-color: #f3f9fb;
+}
+.hero { position: relative; }
+.hero-badge, .section-label, .section-tag, .section-tag, .category {
+  border-radius: 999px;
+}
+.hero h1, .page-hero h1, .page-header h1, .section-heading h2 {
+  color: var(--purple); letter-spacing: -.045em; line-height: 1.12;
+}
+.hero h1 span { color: var(--red) !important; }
+.hero-text > p, .section-heading p { color: var(--text); line-height: 1.8; }
+.hero-image-wrapper, .hero-image-background { border-radius: 28px !important; }
+.hero-circle-ring { border-color: rgba(15,159,154,.25) !important; }
+.hero-glow { opacity: .45; }
+
+section { scroll-margin-top: 90px; }
+.section-heading { margin-bottom: 34px; }
+.section-label, .section-tag { color: #087d79 !important; background: #e2f7f5 !important; font-weight: 800; letter-spacing: .09em; }
+.service-card, .doctor-card, .testimonial-card, .benefit-card, .value-card, .mission-card,
+.info-card, .appointment-info-card, .appointment-card, .why-services-card, .details-card,
+.full-details-card, .stat-card {
+  border: 1px solid var(--border) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 10px 28px rgba(18,48,74,.055) !important;
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+.service-card:hover, .doctor-card:hover, .testimonial-card:hover, .benefit-card:hover,
+.value-card:hover, .mission-card:hover, .info-card:hover {
+  transform: translateY(-5px); border-color: rgba(15,159,154,.35) !important;
+  box-shadow: 0 20px 42px rgba(18,48,74,.11) !important;
+}
+.service-icon, .benefit-icon, .value-icon, .info-card-icon, .appointment-card-icon {
+  border-radius: 16px !important;
+}
+.service-card h3, .doctor-profile-info h3, .benefit-card h3, .value-card h3 { color: var(--purple); }
+.service-card p, .doctor-profile-info p, .benefit-card p, .value-card p { color: var(--text); line-height: 1.75; }
+
+.about, .services, .doctors-page, .about-story, .about-why, .values-section,
+.appointment-section, .services-intro, .why-services { background-color: #fff; }
+.about-box, .appointment-box, .services-cta, .emergency-box {
+  border-radius: 26px !important; overflow: hidden;
+  box-shadow: 0 24px 60px rgba(18,48,74,.10) !important;
+}
+.outline-btn, .secondary-btn, .btn-outline-white {
+  border-radius: 12px !important; border-color: rgba(15,159,154,.5) !important;
+}
+
+input, select, textarea, .new-input {
+  border: 1px solid #d6e4eb !important; border-radius: 12px !important;
+  background: #fbfdfe !important; color: var(--dark) !important;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+input:focus, select:focus, textarea:focus, .new-input:focus {
+  outline: none !important; border-color: #0f9f9a !important;
+  box-shadow: 0 0 0 4px rgba(15,159,154,.12) !important;
+}
+label { color: #29495c; font-weight: 700; }
+.flash-message { border-radius: 12px !important; }
+
+footer, .footer {
+  background: #0b2237 !important; color: #d8e5eb !important;
+}
+footer a, .footer a { transition: color .2s ease; }
+footer a:hover, .footer a:hover { color: #65d8d0 !important; }
+.footer-bottom { border-color: rgba(255,255,255,.12) !important; }
+.footer-brand, .footer-column h3, .footer-column h4 { color: #fff !important; }
+
+/* Admin pages retain their dashboard layout but use the premium palette. */
+.dashboard-sidebar, .admin-navbar { background: #0b2237 !important; }
+.dashboard-brand-icon, .stat-icon { background: var(--gradient) !important; }
+.dashboard-main { background: #f4f8fa !important; }
+.appointments-table th { background: #edf5f7 !important; color: #29495c !important; }
+.appointments-table td { border-color: #e3edf1 !important; }
+
+/* Contact page */
+.contact-page { padding: 74px 0 88px; background: linear-gradient(180deg,#f3f9fb 0%,#fff 48%); }
+.contact-hero { max-width: 780px; margin: 0 auto 42px; text-align: center; }
+.contact-eyebrow { display:inline-flex; padding:8px 14px; border-radius:999px; background:#e2f7f5; color:#087d79; font-size:.78rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; }
+.contact-hero h1 { margin:18px 0 14px; color:#12304a; font-size:clamp(2.3rem,5vw,3.8rem); line-height:1.08; letter-spacing:-.05em; }
+.contact-hero p { color:#607786; font-size:1.05rem; line-height:1.8; }
+.contact-layout { display:grid; grid-template-columns: .9fr 1.1fr; gap:24px; align-items:stretch; }
+.contact-panel { padding:30px; background:#fff; border:1px solid #dce8ee; border-radius:22px; box-shadow:0 16px 40px rgba(18,48,74,.07); }
+.contact-panel h2 { margin:0 0 12px; color:#12304a; font-size:1.35rem; }
+.contact-panel > p { color:#607786; line-height:1.75; }
+.contact-item { display:flex; gap:15px; align-items:flex-start; padding:18px 0; border-bottom:1px solid #e7eff3; }
+.contact-item:last-child { border-bottom:0; }
+.contact-item-icon { display:grid; place-items:center; flex:0 0 44px; height:44px; border-radius:14px; background:#e2f7f5; color:#087d79; font-size:1.2rem; }
+.contact-item strong { display:block; color:#12304a; margin:1px 0 4px; }
+.contact-item span, .contact-item a { color:#607786; line-height:1.65; overflow-wrap:anywhere; }
+.contact-note { margin-top:20px; padding:16px; border-radius:14px; background:#f3f9fb; color:#496777; font-size:.92rem; line-height:1.7; }
+.contact-action { display:inline-flex; align-items:center; justify-content:center; margin-top:20px; padding:13px 18px; border-radius:12px; background:var(--gradient); color:#fff !important; font-weight:800; text-decoration:none; }
+.contact-action:hover { transform:translateY(-2px); }
+
+@media (max-width: 800px) {
+  .contact-page { padding:48px 0 60px; }
+  .contact-layout { grid-template-columns:1fr; }
+  .contact-panel { padding:23px; }
+  .hero h1 { letter-spacing:-.035em; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior:auto !important; transition:none !important; animation:none !important; }
+}

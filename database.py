@@ -347,6 +347,7 @@ def update_appointment_status(
 
         "Confirmed",
 
+        "Completed",
         "Cancelled"
 
     ]
@@ -761,4 +762,3 @@ def get_dashboard_stats():
 # START DATABASE
 # =========================================================
 
-init_db()

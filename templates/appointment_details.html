@@ -535,6 +535,12 @@
                     {% endif %}
 
 
+                    {% if appointment["status"] == "Confirmed" %}
+                    <form method="POST" action="{{ url_for('complete_appointment', appointment_id=appointment['id']) }}">
+                        <button type="submit" class="detail-action confirm">Mark as Completed</button>
+                    </form>
+                    {% endif %}
+
                     {% if appointment["status"] != "Cancelled" %}
 
                     <form
