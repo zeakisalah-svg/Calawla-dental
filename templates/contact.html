@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#7138a8">
+  <meta name="description" content="Contact Calawla Dental Clinic for dental service information and appointment assistance.">
+  <title>Contact Us | Calawla Dental Clinic</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='CSS/style.css') }}">
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-content">
+      <a href="{{ url_for('home') }}" class="logo"><span class="logo-icon">✚</span><span>Calawla <strong>Dental</strong></span></a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('services') }}">Services</a>
+        <a href="{{ url_for('about') }}">About Us</a>
+        <a href="{{ url_for('doctors') }}">Our Doctors</a>
+        <a href="{{ url_for('contact') }}" class="active" aria-current="page">Contact</a>
+      </nav>
+      <a href="{{ url_for('appointment') }}" class="nav-btn">Book Appointment</a>
+    </div>
+  </header>
+
+  <main class="contact-page">
+    <div class="container">
+      <section class="contact-hero">
+        <span class="contact-eyebrow">We're here to help</span>
+        <h1>Let's take care of your smile.</h1>
+        <p>Have a question about our dental services or need help planning your visit? Contact our team or request an appointment. We'll help you find the next step for your dental care.</p>
+      </section>
+
+      <div class="contact-layout">
+        <section class="contact-panel">
+          <h2>Get in touch</h2>
+          <p>Choose the best way to reach the clinic. Please avoid sending sensitive medical details through public channels.</p>
+          <div class="contact-item">
+            <div class="contact-item-icon" aria-hidden="true">☎</div>
+            <div><strong>Call the clinic</strong><span>Use the clinic's verified phone number to ask about services and availability.</span></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon" aria-hidden="true">⌖</div>
+            <div><strong>Visit us</strong><span>Contact the clinic for the current location and directions before travelling.</span></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon" aria-hidden="true">◷</div>
+            <div><strong>Appointment hours</strong><span>Availability may vary. Please contact the clinic to confirm opening hours.</span></div>
+          </div>
+          <div class="contact-note"><strong>Need a visit?</strong><br>Use the appointment page to submit your preferred date and time. Your request may need confirmation from the clinic.</div>
+          <a class="contact-action" href="{{ url_for('appointment') }}">Request an appointment&nbsp; →</a>
+        </section>
+
+        <section class="contact-panel">
+          <h2>How we can help</h2>
+          <p>Our website can help you explore the clinic and prepare for your visit.</p>
+          <div class="contact-item">
+            <div class="contact-item-icon" aria-hidden="true">✦</div>
+            <div><strong>Dental services</strong><span>Review the services available at Calawla Dental Clinic.</span><br><a href="{{ url_for('services') }}">Explore services →</a></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon" aria-hidden="true">♙</div>
+            <div><strong>Meet the team</strong><span>Learn more about the clinic's dental team and care approach.</span><br><a href="{{ url_for('doctors') }}">Meet our doctors →</a></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon" aria-hidden="true">＋</div>
+            <div><strong>Plan your appointment</strong><span>Send your preferred date and time for the clinic to review.</span><br><a href="{{ url_for('appointment') }}">Book an appointment →</a></div>
+          </div>
+          <div class="contact-note">Before publishing this page, add the clinic's verified phone number, physical address, opening hours, and official email or WhatsApp details. We have not invented these details.</div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand"><a href="{{ url_for('home') }}" class="logo light"><span class="logo-icon">✚</span><span>Calawla <strong>Dental</strong></span></a><p>Professional dental care with a focus on comfort, trust, and healthy smiles.</p></div>
+      <div class="footer-column"><h3>Explore</h3><a href="{{ url_for('services') }}">Services</a><a href="{{ url_for('about') }}">About us</a><a href="{{ url_for('doctors') }}">Our doctors</a></div>
+      <div class="footer-column"><h3>Patient care</h3><a href="{{ url_for('appointment') }}">Request appointment</a><a href="{{ url_for('contact') }}">Contact</a></div>
+    </div>
+    <div class="container footer-bottom"><span>© {{ now_year if now_year is defined else 2026 }} Calawla Dental Clinic. All rights reserved.</span></div>
+  </footer>
+</body>
+</html>
